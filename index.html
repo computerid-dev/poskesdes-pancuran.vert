@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#6dbb8a">
+  <meta name="description" content="Pencatatan pasien Poskesdes Dusun III Pancuran">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="Poskesdes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <title>Poskesdes Pancuran</title>
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Poskesdes Pancuran">
+  <meta property="og:locale" content="id_ID">
+  <meta property="og:title" content="Poskesdes Dusun III Pancuran">
+  <meta property="og:description" content="Aplikasi pencatatan pasien, riwayat, dan keuangan. Bidan Ratna Sapitri Yanti, S.Keb.">
+  <meta property="og:url" content="https://poskesdes-pancuran.vercel.app/">
+  <meta property="og:image" content="https://poskesdes-pancuran.vercel.app/icons/icon-512.png">
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:image:width" content="512">
+  <meta property="og:image:height" content="512">
+  <meta property="og:image:alt" content="Logo Poskesdes Dusun III Pancuran">
+  <meta name="twitter:card" content="summary">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" type="image/png" sizes="48x48" href="icons/favicon-48.png">
+  <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="lock" class="lock" hidden>
+    <div class="lock-box">
+      <img src="logo.png" alt="Logo Poskesdes" class="logo-lg">
+      <h1>Poskesdes Pancuran</h1>
+      <p>Masukkan PIN untuk membuka data pasien.</p>
+      <input id="lockPin" type="password" inputmode="numeric" maxlength="8" placeholder="PIN" autocomplete="off">
+      <p id="lockErr" class="err" hidden>PIN belum cocok, coba lagi.</p>
+      <button id="lockBtn" class="btn">Buka</button>
+    </div>
+  </div>
+
+  <header class="top">
+    <img src="logo.png" alt="Logo Poskesdes" class="logo">
+    <div class="grow">
+      <h1>Poskesdes Dusun III Pancuran</h1>
+      <p id="sapa">Bidan Ratna Sapitri Yanti, S.Keb</p>
+    </div>
+    <button id="installBtn" class="btn sm alt" hidden>Pasang</button>
+  </header>
+
+  <div id="iosHint" class="hint" hidden>
+    <span>Untuk memasang di iPhone: buka lewat Safari, tekan tombol Bagikan, lalu pilih Tambah ke Layar Utama.</span>
+    <button id="iosHintClose" class="btn sm alt">Tutup</button>
+  </div>
+
+  <main id="view"></main>
+
+  <nav class="nav" id="nav">
+    <button data-tab="home" class="on">Beranda</button>
+    <button data-tab="add">Tambah</button>
+    <button data-tab="hist">Riwayat</button>
+    <button data-tab="money">Keuangan</button>
+    <button data-tab="more">Lainnya</button>
+  </nav>
+
+  <div id="toast" class="toast" hidden></div>
+  <script src="app.js"></script>
+  <script src="pwa.js"></script>
+</body>
+</html>
